@@ -3,75 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopEZ</title>
+  <title>ShopEZ Prototype</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-shell">
-    <header class="top-header">
-      <div class="header-row">
-        <div class="icon-circle" aria-label="Profile">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="8" r="4"></circle>
-            <path d="M4 20a8 8 0 0 1 16 0"></path>
-          </svg>
-        </div>
-        <h1>ShopEZ</h1>
-        <div class="icon-bell" aria-label="Notifications">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 4a4 4 0 0 0-4 4v2.2c0 1.4-.5 2.8-1.5 3.8L5 15.5h14L17.5 14c-1-1-1.5-2.4-1.5-3.8V8a4 4 0 0 0-4-4Z"></path>
-            <path d="M10 18a2 2 0 0 0 4 0"></path>
-          </svg>
-        </div>
-      </div>
+  <div class="phone-shell">
+    <header class="top-bar">
+      <button class="icon-button profile" type="button" aria-label="Profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 20a8 8 0 0 1 16 0"></path>
+        </svg>
+      </button>
+      <h1>ShopEZ</h1>
+      <button class="icon-button bell" type="button" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 4a4 4 0 0 0-4 4v2.2c0 1.4-.5 2.8-1.5 3.8L5 15.5h14L17.5 14c-1-1-1.5-2.4-1.5-3.8V8a4 4 0 0 0-4-4Z"></path>
+          <path d="M10 18a2 2 0 0 0 4 0"></path>
+        </svg>
+      </button>
     </header>
 
-    <main class="content-area">
-      <section class="cards-grid" aria-label="Top content cards">
-        <article class="tile small-tile">
-          <div></div>
-        </article>
-        <article class="tile small-tile">
-          <div></div>
-        </article>
-        <article class="tile small-tile">
-          <div></div>
-        </article>
-        <article class="tile small-tile">
-          <div></div>
-        </article>
+    <main class="screen-host" aria-live="polite">
+      <section class="screen active" data-screen="1" aria-label="Home">
+        <div class="grid-two">
+          <button type="button" class="tile square" data-target-screen="2">Card 1</button>
+          <button type="button" class="tile square" data-target-screen="9">Card 2</button>
+          <button type="button" class="tile square" data-target-screen="3">Card 3</button>
+          <button type="button" class="tile square" data-target-screen="4">Card 4</button>
+        </div>
+        <button type="button" class="tile wide-large" data-target-screen="5">Featured</button>
       </section>
 
-      <section class="featured-section" aria-label="Featured content">
-        <article class="tile large-tile">
-          <div></div>
-        </article>
+      <section class="screen" data-screen="2" aria-label="Results list">
+        <div class="stack-list">
+          <button type="button" class="tile wide-row" data-target-screen="3">Result 1</button>
+          <button type="button" class="tile wide-row" data-target-screen="4">Result 2</button>
+          <button type="button" class="tile wide-row" data-target-screen="6">Result 3</button>
+          <button type="button" class="tile wide-row" data-target-screen="7">Result 4</button>
+          <button type="button" class="tile wide-row" data-target-screen="8">Result 5</button>
+          <button type="button" class="tile wide-row" data-target-screen="11">Result 6</button>
+          <button type="button" class="tile wide-row" data-target-screen="12">Result 7</button>
+          <button type="button" class="tile wide-row" data-target-screen="1">Back to Home</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="3" aria-label="Feature and options">
+        <button type="button" class="tile hero" data-target-screen="5">Top Feature</button>
+        <div class="grid-two bottom-pair">
+          <button type="button" class="tile square" data-target-screen="9">Option A</button>
+          <button type="button" class="tile square" data-target-screen="10">Option B</button>
+        </div>
+        <button type="button" class="tile wide-row" data-target-screen="2">More Results</button>
+      </section>
+
+      <section class="screen" data-screen="4" aria-label="Category and quick rows">
+        <div class="grid-two top-only">
+          <button type="button" class="tile square" data-target-screen="9">Category A</button>
+          <button type="button" class="tile square" data-target-screen="10">Category B</button>
+        </div>
+        <div class="stack-list short">
+          <button type="button" class="tile wide-row" data-target-screen="2">Quick Item 1</button>
+          <button type="button" class="tile wide-row" data-target-screen="6">Quick Item 2</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="5" aria-label="Home with recommendations">
+        <div class="grid-two">
+          <button type="button" class="tile square" data-target-screen="9">Rec 1</button>
+          <button type="button" class="tile square" data-target-screen="10">Rec 2</button>
+          <button type="button" class="tile square" data-target-screen="3">Rec 3</button>
+          <button type="button" class="tile square" data-target-screen="4">Rec 4</button>
+        </div>
+        <div class="stack-list short">
+          <button type="button" class="tile wide-row" data-target-screen="6">Recommended 1</button>
+          <button type="button" class="tile wide-row" data-target-screen="7">Recommended 2</button>
+          <button type="button" class="tile wide-row" data-target-screen="8">Recommended 3</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="6" aria-label="List view one">
+        <div class="grid-two">
+          <button type="button" class="tile square" data-target-screen="3">Card 1</button>
+          <button type="button" class="tile square" data-target-screen="4">Card 2</button>
+          <button type="button" class="tile square" data-target-screen="9">Card 3</button>
+          <button type="button" class="tile square" data-target-screen="10">Card 4</button>
+        </div>
+        <div class="stack-list short">
+          <button type="button" class="tile wide-row" data-target-screen="7">Item 1</button>
+          <button type="button" class="tile wide-row" data-target-screen="8">Item 2</button>
+          <button type="button" class="tile wide-row" data-target-screen="11">Item 3</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="7" aria-label="List view two">
+        <div class="grid-two">
+          <button type="button" class="tile square" data-target-screen="9">Card 1</button>
+          <button type="button" class="tile square" data-target-screen="10">Card 2</button>
+          <button type="button" class="tile square" data-target-screen="3">Card 3</button>
+          <button type="button" class="tile square" data-target-screen="4">Card 4</button>
+        </div>
+        <div class="stack-list short">
+          <button type="button" class="tile wide-row" data-target-screen="6">Item 1</button>
+          <button type="button" class="tile wide-row" data-target-screen="8">Item 2</button>
+          <button type="button" class="tile wide-row" data-target-screen="12">Item 3</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="8" aria-label="List view three">
+        <div class="grid-two">
+          <button type="button" class="tile square" data-target-screen="3">Card 1</button>
+          <button type="button" class="tile square" data-target-screen="4">Card 2</button>
+          <button type="button" class="tile square" data-target-screen="9">Card 3</button>
+          <button type="button" class="tile square" data-target-screen="10">Card 4</button>
+        </div>
+        <div class="stack-list short">
+          <button type="button" class="tile wide-row" data-target-screen="6">Item 1</button>
+          <button type="button" class="tile wide-row" data-target-screen="7">Item 2</button>
+          <button type="button" class="tile wide-row" data-target-screen="11">Item 3</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="9" aria-label="Catalog grid one">
+        <div class="grid-two three-rows">
+          <button type="button" class="tile square" data-target-screen="10">Product 1</button>
+          <button type="button" class="tile square" data-target-screen="10">Product 2</button>
+          <button type="button" class="tile square" data-target-screen="11">Product 3</button>
+          <button type="button" class="tile square" data-target-screen="11">Product 4</button>
+          <button type="button" class="tile square" data-target-screen="12">Product 5</button>
+          <button type="button" class="tile square" data-target-screen="12">Product 6</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="10" aria-label="Catalog grid two">
+        <div class="grid-two three-rows">
+          <button type="button" class="tile square" data-target-screen="9">Product 1</button>
+          <button type="button" class="tile square" data-target-screen="9">Product 2</button>
+          <button type="button" class="tile square" data-target-screen="11">Product 3</button>
+          <button type="button" class="tile square" data-target-screen="11">Product 4</button>
+          <button type="button" class="tile square" data-target-screen="12">Product 5</button>
+          <button type="button" class="tile square" data-target-screen="12">Product 6</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="11" aria-label="Detail layout one">
+        <button type="button" class="tile hero small-hero" data-target-screen="12">Main Detail</button>
+        <div class="stagger-list">
+          <button type="button" class="tile row-short" data-target-screen="2">Action 1</button>
+          <button type="button" class="tile row-long" data-target-screen="3">Action 2</button>
+          <button type="button" class="tile row-mid" data-target-screen="4">Action 3</button>
+          <button type="button" class="tile row-short" data-target-screen="5">Action 4</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="12" aria-label="Stacked detail layout">
+        <button type="button" class="tile hero small-hero" data-target-screen="11">Top Detail</button>
+        <button type="button" class="tile hero small-hero" data-target-screen="1">Bottom Detail</button>
       </section>
     </main>
 
-    <nav class="bottom-nav" aria-label="Bottom navigation">
-      <div class="nav-track">
-        <button type="button" aria-label="Search">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <circle cx="11" cy="11" r="6"></circle>
-            <path d="M16 16l4.5 4.5"></path>
-          </svg>
-        </button>
-        <button type="button" aria-label="Filter">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M4 5h16l-6.5 7v5.5l-3 1.5V12L4 5Z"></path>
-          </svg>
-        </button>
-        <button type="button" aria-label="Chat">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M4 6.5A3.5 3.5 0 0 1 7.5 3h9A3.5 3.5 0 0 1 20 6.5v6A3.5 3.5 0 0 1 16.5 16H10l-4.5 4v-4H7.5A3.5 3.5 0 0 1 4 12.5v-6Z"></path>
-            <circle cx="10" cy="9.5" r="1"></circle>
-            <circle cx="13" cy="9.5" r="1"></circle>
-            <circle cx="16" cy="9.5" r="1"></circle>
-          </svg>
-        </button>
-      </div>
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-button" type="button" data-nav="search" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="6"></circle>
+          <path d="M16 16l4.5 4.5"></path>
+        </svg>
+      </button>
+      <button class="nav-button" type="button" data-nav="filter" aria-label="Filter">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 5h16l-6.5 7v5.5l-3 1.5V12L4 5Z"></path>
+        </svg>
+      </button>
+      <button class="nav-button" type="button" data-nav="chat" aria-label="Chat">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6.5A3.5 3.5 0 0 1 7.5 3h9A3.5 3.5 0 0 1 20 6.5v6A3.5 3.5 0 0 1 16.5 16H10l-4.5 4v-4H7.5A3.5 3.5 0 0 1 4 12.5v-6Z"></path>
+          <circle cx="10" cy="9.5" r="1"></circle>
+          <circle cx="13" cy="9.5" r="1"></circle>
+          <circle cx="16" cy="9.5" r="1"></circle>
+        </svg>
+      </button>
     </nav>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
