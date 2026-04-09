@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #5e0f18;
+  color: #e2ad57;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.app-shell {
+  width: min(100vw, 430px);
+  min-height: 100vh;
+  padding: 28px 22px 24px;
+  background: radial-gradient(circle at top, #6b101b 0%, #580e17 60%, #4c0c14 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.top-header {
+  display: block;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.icon-circle,
+.icon-bell {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: transparent;
+  color: #c88442;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  display: grid;
+  place-items: center;
+}
+
+.icon-bell {
+  border-radius: 22px;
+}
+
+.icon-circle svg,
+.icon-bell svg {
+  width: 68px;
+  height: 68px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 24px;
+}
+
+.tile {
+  background: #cf6a45;
+  border-radius: 16px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.12);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.small-tile {
+  aspect-ratio: 1 / 1.15;
+}
+
+.large-tile {
+  width: 100%;
+  min-height: 250px;
+}
+
+.bottom-nav {
+  margin-top: auto;
+}
+
+.nav-track {
+  background: #7a2a2a;
+  border-radius: 18px;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.nav-track button {
+  width: 88px;
+  height: 88px;
+  border: 0;
+  background: transparent;
+  color: #c88442;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.nav-track button svg {
+  width: 54px;
+  height: 54px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.28));
+}
+
+.nav-track button:nth-child(2) svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.nav-track button:nth-child(3) svg circle {
+  fill: currentColor;
+  stroke: none;
+}
